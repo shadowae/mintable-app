@@ -1,14 +1,15 @@
 import { Router } from 'express';
-
+import authenticate from "./authenticate";
 import ntfs from './ntfs';
 import healthcheck from './healthcheck'
 
 const router = Router();
 
+router.use('/authenticate', authenticate)
 router.use('/nfts', ntfs);
 /**
  * @swagger
- * /health:
+ * /healthcheck:
  *   get:
  *     description: Retrieve the system health information
  *     responses:
