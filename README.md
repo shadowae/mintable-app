@@ -99,12 +99,32 @@ Endpoint is deployed at
 | `description` | `string` | **Required**. Id of NFT to mint       |
 
 
+```http
+  POST /authentication/login
+```
+
+| Body          | Type     | Description                           |
+|:--------------|:---------|:--------------------------------------|
+| `username`    | `string` | **Required**. username of user        |
+| `password`    | `string` | **Required**. hashed password of user |
+
+```http
+  POST /authentication/validate
+```
+
+| Header          | Type     | Description                           |
+|:----------------|:---------|:--------------------------------------|
+| `authorization` | `string` | **Required**. token of user           |
+
+
 ## Appendix
 
-Any additional information goes here
-
-If you would choose to deploy this in a AWS Lambda of your account. Please ensure a few things
+### If you would choose to deploy this in a AWS Lambda of your account. Please ensure a few things
 
 1. Create credentials with sufficient rights to deploy the serverless code
 2. Set up of AWS credentials on your machine including the region
 3. Please create a DynamoDB table called **NFTs** in the **SAME REGION** as the lambda being deployed
+
+### Please note that deploying the code to serverless locally or on cloud will append a stage name to the api.
+
+For example, `http://localhost:3000/ntfs` will become `http://localhost:3000/dev/ntfs`
