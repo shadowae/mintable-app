@@ -2,8 +2,13 @@ import {Router} from 'express';
 import getItemsDetails from './getItemDetails'
 import listItem from './listItem'
 import mintItem from './mintItem'
+import authMiddleware from "../../utils/middleware";
 
 const router = Router();
+
+router.use(authMiddleware);  // Middleware applied here
+
+
 /**
  * @swagger
  * /nfts:

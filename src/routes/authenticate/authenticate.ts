@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import jwt from 'jsonwebtoken';
-const SECRET_KEY = 'yourSecretKey';
-
+import {validateToken} from "../../utils/validateToken";
+import {SECRET_KEY} from '../../constant/authSecrets';
 /**
  * @swagger
  * /auth/login:
@@ -46,19 +46,21 @@ export const login = (req: Request, res: Response) => {
  *       401:
  *         description: Token is invalid or expired
  */
-export const validateToken = (req: Request, res: Response) => {
+
+export const validateTokenEndpoint = async (req: Request, res: Response) => {
 	const token = req.headers['authorization'];
+	
 	if (token) {
-		jwt.verify(token, SECRET_KEY, (err, decoded) => {
-			if (err) {
-				res.status(401).json({ message: 'Token is invalid or expired' });
-			} else {
-				res.json({ message: 'Token is valid', user: decoded });
-			}
-		});
+		try {
+			const user = await validateToken(token);
+			res.json({ message: 'Token is valid', user });
+		} catch (error) {
+			res.status(401).json({ message: error });
+		}
 	} else {
 		res.status(401).json({ message: 'No token provided' });
 	}
 };
+
 
 
