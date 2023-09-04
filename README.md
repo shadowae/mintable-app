@@ -64,7 +64,14 @@ To deploy this project run
 Endpoint is deployed at 
 
 ```https://t65m3ezdq9.execute-api.ap-southeast-1.amazonaws.com/dev```
+
 ## API Reference
+
+### Swagger UI is available at http://localhost:3000/api-docs when you run Node without Serverless
+
+```bash
+  npm run dev
+```
 
 #### Get all NFTS
 
