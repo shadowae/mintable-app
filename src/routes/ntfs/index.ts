@@ -12,6 +12,8 @@ router.use(authMiddleware);  // Middleware applied here
  * @swagger
  * /nfts:
  *   get:
+ *     tags:
+ *       - NTFs
  *     description: Retrieve a list of all NFTs
  *     responses:
  *       200:
@@ -24,6 +26,8 @@ router.get('/', listItem);
  * @swagger
  * /nfts/{nftId}:
  *   get:
+ *     tags:
+ *       - NTFs
  *     description: Retrieve details of a specific NFT by its ID
  *     parameters:
  *       - name: nftId
@@ -41,6 +45,8 @@ router.get('/:nftId', getItemsDetails);
  * @swagger
  * /nfts/mint:
  *   post:
+ *     tags:
+ *       - NTFs
  *     description: Mint a new NFT
  *     parameters:
  *       - name: name

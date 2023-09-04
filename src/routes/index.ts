@@ -11,6 +11,8 @@ router.use('/nfts', ntfs);
  * @swagger
  * /healthcheck:
  *   get:
+ *     tags:
+ *       - Health
  *     description: Retrieve the system health information
  *     responses:
  *       200:
