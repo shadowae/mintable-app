@@ -1,3 +1,4 @@
+import path from 'path';
 const swaggerOptions = {
 	swaggerDefinition: {
 		info: {
@@ -7,7 +8,11 @@ const swaggerOptions = {
 		},
 		servers: ['http://localhost:3000'],
 	},
-	apis: ['./src/routes/*.ts', './src/routes/ntfs/*.ts', './src/routes/authenticate/*.ts'],
+	apis: [
+		path.join(__dirname, 'routes', '*.ts'),
+		path.join(__dirname, 'routes', 'ntfs', '*.ts'),
+		path.join(__dirname, 'routes', 'authenticate', '*.ts')
+	],
 };
 
 export default swaggerOptions;
