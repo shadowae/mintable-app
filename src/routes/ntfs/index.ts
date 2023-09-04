@@ -8,7 +8,6 @@ const router = Router();
 
 router.use(authMiddleware);  // Middleware applied here
 
-
 /**
  * @swagger
  * /nfts:
