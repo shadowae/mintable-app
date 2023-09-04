@@ -43,7 +43,7 @@ router.get('/', listItem);
 router.get('/:nftId', getItemsDetails);
 /**
  * @swagger
- * /nfts/mint:
+ * /nfts:
  *   post:
  *     tags:
  *       - NTFs
