@@ -9,9 +9,9 @@ const swaggerOptions = {
 		servers: ['http://localhost:3000'],
 	},
 	apis: [
-		path.join(__dirname, 'routes', '*.ts'),
-		path.join(__dirname, 'routes', 'ntfs', '*.ts'),
-		path.join(__dirname, 'routes', 'authenticate', '*.ts')
+		path.join(__dirname, '*.ts'),
+		path.join(__dirname, 'ntfs', '*.ts'),
+		path.join(__dirname, 'authenticate', '*.ts')
 	],
 };
 
