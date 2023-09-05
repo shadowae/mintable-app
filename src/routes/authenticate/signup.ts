@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import putItem from "../../utils/putItems";
-import getCommand from "../../utils/getCommand";
-import {USERS_TABLE} from "../../constant/authSecrets";
+import putItem from '../../utils/putItems';
+import getCommand from '../../utils/getCommand';
+import {USERS_TABLE} from '../../constant/authSecrets';
 
 export const signup = async (req: Request, res: Response) => {
 	const { username, password } = req.body;
@@ -21,7 +21,7 @@ export const signup = async (req: Request, res: Response) => {
 			return;
 		}
 	} catch (error) {
-		console.error("Error checking user existence:", error);
+		console.error('Error checking user existence:', error);
 		res.status(500).json({ message: 'Internal server error' });
 		return;
 	}
@@ -45,7 +45,7 @@ export const signup = async (req: Request, res: Response) => {
 			res.status(201).json({ message: 'User registered successfully' });
 		}
 	} catch (error) {
-		console.error("Error registering user:", error);
+		console.error('Error registering user:', error);
 		res.status(500).json({ message: 'Internal server error' });
 	}
 };

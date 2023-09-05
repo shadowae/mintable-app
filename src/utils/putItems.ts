@@ -1,7 +1,7 @@
-import { PutCommand } from "@aws-sdk/lib-dynamodb";
-import {NFT} from "../models/NTF";
+import { PutCommand } from '@aws-sdk/lib-dynamodb';
+import {NFT} from '../models/NTF';
 import DynamoClient from './DynamoClient';
-import {User} from "../models/user";
+import {User} from '../models/user';
 
 export default async ({TableName, Item}: {TableName: string ; Item: NFT|User}) => {
 	const command = new PutCommand({

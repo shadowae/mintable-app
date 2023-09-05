@@ -1,5 +1,5 @@
-import {Request, Response} from "express";
-import {validateToken} from "../../utils/validateToken";
+import {Request, Response} from 'express';
+import {validateToken} from '../../utils/validateToken';
 
 /**
  * @swagger

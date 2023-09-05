@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import authenticate from "./authenticate";
+import authenticate from './authenticate';
 import ntfs from './ntfs';
 import healthcheck from './healthcheck';
 import swaggerJsDoc from 'swagger-jsdoc';
@@ -10,7 +10,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 const router = Router();
 
-router.use('/authenticate', authenticate)
+router.use('/authenticate', authenticate);
 router.use('/nfts', ntfs);
 /**
  * @swagger

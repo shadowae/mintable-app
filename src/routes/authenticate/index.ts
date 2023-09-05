@@ -1,6 +1,6 @@
-import {Router} from "express";
+import {Router} from 'express';
 import {login} from './login';
-import {signup} from "./signup";
+import {signup} from './signup';
 
 const router = Router();
 /**

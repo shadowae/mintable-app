@@ -1,11 +1,11 @@
-import {Request, Response} from "express";
-import getCommand from "../../utils/getCommand";
+import {Request, Response} from 'express';
+import getCommand from '../../utils/getCommand';
 
 export default async (req: Request, res: Response)=> {
-	const nftId = req.params['nftId']
+	const nftId = req.params['nftId'];
 	
 	const params = {
-		TableName: "NFTs",
+		TableName: 'NFTs',
 		Key: {
 			nftId: nftId
 		}
@@ -14,10 +14,11 @@ export default async (req: Request, res: Response)=> {
 	try {
 		const result = await getCommand(params);
 		if (result.$metadata.httpStatusCode != null) {
-			res.status(result.$metadata.httpStatusCode).send(result.Item)
+			res.status(result.$metadata.httpStatusCode).send(result.Item);
 		}
 	} catch (error) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
-		res.status(400).send(error.message)
+		res.status(400).send(error.message);
 	}
 };
