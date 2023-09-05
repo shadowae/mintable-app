@@ -67,7 +67,14 @@ Endpoint is deployed at
 
 ## API Reference
 
-### Swagger UI is available at http://localhost:3000/api-docs when you run Node without Serverless
+### Swagger UI 
+
+Swagger UI is available at http://localhost:3000/api-docs when you run Node **_without Serverless_**
+
+### Architecture of the code
+
+![Architecture.png](Architecture.png)
+[Live Link to the diagram](https://app.eraser.io/workspace/4zIt6zB7LJpFryl199hj)
 
 ```bash
   npm run dev
@@ -135,3 +142,4 @@ Endpoint is deployed at
 ### Please note that deploying the code to serverless locally or on cloud will append a stage name to the api.
 
 For example, `http://localhost:3000/ntfs` will become `http://localhost:3000/dev/ntfs`
+
